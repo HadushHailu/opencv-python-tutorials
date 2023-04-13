@@ -3,9 +3,10 @@ import numpy
 
 img = cv2.imread("resource/screenshot.png", cv2.IMREAD_COLOR)
 
+#ksize = 13
 img_mb = cv2.medianBlur(img, 13)
 
-#img_b = cv2.blur(img, 5)
+#img_b = cv2.blur(img, (5,5))
 
 cv2.imshow("img", img)
 cv2.imshow("img_medianBlur", img_mb)

@@ -12,10 +12,9 @@ having same color or intensity. The contours are a useful tool for shape analysi
 '''
 
 ## 
-img = cv2.imread("resource/sink2.png", cv2.IMREAD_COLOR)
-img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+img = cv2.imread("resource/sink.jpg", cv2.IMREAD_COLOR)
+img = cv2.pyrDown(cv2.pyrDown(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)))
 
-#img = img[700:1200, 700:1500]
 
 '''
     cv.THRESH_BINARY
@@ -45,7 +44,7 @@ print(hierarchy)
 
 color = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 
-## img, contour, contourIdx -1(all), marker color, marker thickness
+## img, contour , contourIdx -1(all), marker color, marker thickness
 img = cv2.drawContours(color, contours, -1, (0,0,255), 4)
 
 cv2.imshow("contours", img)
