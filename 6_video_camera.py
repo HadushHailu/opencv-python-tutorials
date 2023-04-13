@@ -25,5 +25,6 @@ while success and numFrameRemaining > 0:
     videoWriter.write(frame)
     success, frame = cameraCapture.read()
     numFrameRemaining -= 1
+
 print("Done!")
 cameraCapture.release()
